@@ -1,4 +1,4 @@
-import { checkForName } from './js/nameChecker'
+import { isString } from './js/stringChecker'
 import { handleSubmit } from './js/formHandler'
 
 import "./styles/resets.scss"
@@ -8,6 +8,6 @@ import "./styles/footer.scss"
 import "./styles/header.scss"
 
 export {
-    checkForName,
+    isString,
     handleSubmit
 }
