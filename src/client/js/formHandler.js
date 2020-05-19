@@ -14,8 +14,18 @@ function handleSubmit(event) {
     })
     .then(res => res.json())
     .then(function(res) {
-        document.getElementById('results').innerHTML = res.polarity_confidence
+        document.getElementById('polarity').innerHTML = constructName('Polarity', res.polarity)
+        document.getElementById('subjectivity').innerHTML = constructName('Subjectivity', res.subjectivity)
+        document.getElementById('polarity_confidence').innerHTML = constructName('Polarity Confidence', res.polarity_confidence)
+        document.getElementById('subjectivity_confidence').innerHTML = constructName('Subjectivity Confidence', res.subjectivity_confidence)
     }).catch(err => console.log(err))
 }
 
+
+function constructName(name, response) {
+    return name + ': ' + response
+}
+
+
 export { handleSubmit }
+export { constructName }
