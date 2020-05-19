@@ -25,12 +25,6 @@ app.use(express.static('dist'))
 
 console.log(__dirname)
 
-const textapi = new aylien({
-    application_id: process.env.AppId,
-    application_key: process.env.APIkey
-
-  });
-
 
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('dist/index.html'))
@@ -47,7 +41,7 @@ app.get('/test', function (req, res) {
 
 app.post('/api', async (req, res) => {
     const { formText } = req.body;
-    console.log(textapi);
+    console.log(formText);
 
     try {
         console.log("Sending request");
@@ -61,4 +55,4 @@ app.post('/api', async (req, res) => {
 
     } catch(error) {
       console.log(error);
-    })
+    }})
